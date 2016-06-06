@@ -10,7 +10,12 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="smf_messages")
-@NamedQuery(name="SmfMessage.findAll", query="SELECT s FROM SmfMessage s")
+@NamedQueries({
+	@NamedQuery(name="SmfMessage.findAll", query="SELECT s FROM SmfMessage s"),
+	// 4 is the number of the board where are the requests.
+	@NamedQuery(name="SmfMessage.findRequestsByIdMember", query="SELECT s FROM SmfMessage s WHERE s.idMember = ? and s.idBoard = 4 ORDER BY s.posterTime DESC"),
+	@NamedQuery(name="SmfMessage.findAllRequests", query="SELECT s FROM SmfMessage s WHERE s.idBoard = 4 ORDER BY s.posterTime DESC")
+})
 public class SmfMessage implements Serializable {
 	private static final long serialVersionUID = 1L;
 

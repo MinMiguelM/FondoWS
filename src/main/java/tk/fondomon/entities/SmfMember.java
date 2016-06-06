@@ -11,7 +11,10 @@ import java.util.Date;
  */
 @Entity
 @Table(name="smf_members")
-@NamedQuery(name="SmfMember.findAll", query="SELECT s FROM SmfMember s")
+@NamedQueries({
+	@NamedQuery(name="SmfMember.findAll", query="SELECT s FROM SmfMember s"),
+	@NamedQuery(name="SmfMember.findByMemberName", query="SELECT s FROM SmfMember s where s.memberName = ?")
+})
 public class SmfMember implements Serializable {
 	private static final long serialVersionUID = 1L;
 
