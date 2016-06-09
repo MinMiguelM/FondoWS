@@ -36,12 +36,18 @@ public class SmfMessageController {
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	SmfMessage add(@RequestBody SmfMessage newMessage){
-		return smfMessageRepository.save(newMessage);
+		smfMessageRepository.save(newMessage);
+		return smfMessageRepository.findByPosterTime(newMessage.getPosterTime());
 	}
 	
 	@RequestMapping(value="/getAll", method=RequestMethod.GET)
 	List<SmfMessage> findAllRequests(){
 		Pageable topTen = new PageRequest(0, 10);
 		return smfMessageRepository.findAllRequests(topTen);
+	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	SmfMessage update(@RequestBody SmfMessage message){
+		return smfMessageRepository.save(message);
 	}
 }
