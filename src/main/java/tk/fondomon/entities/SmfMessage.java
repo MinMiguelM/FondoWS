@@ -65,6 +65,8 @@ public class SmfMessage implements Serializable {
 	private byte smileysEnabled;
 
 	private String subject;
+	
+	private String state;
 
 	public SmfMessage() {
 	}
@@ -196,5 +198,10 @@ public class SmfMessage implements Serializable {
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-
+	public String getState(){
+		return this.state;
+	}
+	public void setState(String state){
+		this.state = state;
+	}
 }
