@@ -19,4 +19,5 @@ public interface SmfMessageRepository extends JpaRepository<SmfMessage, Integer>
 	List<SmfMessage> findRequestsByIdMember(int idMember,Pageable pageable);
 	List<SmfMessage> findAllRequests(Pageable pageable);
 	SmfMessage findByPosterTime(int time);
+	List<SmfMessage> findyByIdMemberState(int idMember);
 }

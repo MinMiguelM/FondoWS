@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EntityScan(basePackages="tk.fondomon.entities")
 @ComponentScan(basePackages={"tk.fondomon.controllers", "tk.fondomon.repositories","tk.fondomon.entities"})
 @EnableAutoConfiguration
-@EnableWebMvc
+//@EnableWebMvc
 public class FondoWsApplication {
 
 	public static void main(String[] args) {

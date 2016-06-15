@@ -7,4 +7,5 @@ import tk.fondomon.entities.SmfMember;
 public interface SmfMemberRepository extends JpaRepository<SmfMember, Integer>{
 	
 	SmfMember findByMemberName(String memberName);
+	SmfMember findByIdMember(int idMember);
 }

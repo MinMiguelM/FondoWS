@@ -50,4 +50,9 @@ public class SmfMessageController {
 	SmfMessage update(@RequestBody SmfMessage message){
 		return smfMessageRepository.save(message);
 	}
+	
+	@RequestMapping(value="/getByIdMemberState/{idMember}", method=RequestMethod.GET)
+	int findyByIdMemberState(@PathVariable int idMember){
+		return smfMessageRepository.findyByIdMemberState(idMember).size();
+	}
 }
