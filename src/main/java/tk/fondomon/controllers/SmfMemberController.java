@@ -32,4 +32,9 @@ public class SmfMemberController {
 	SmfMember update(@RequestBody SmfMember user){
 		return smfMemberRepository.save(user);
 	}
+	
+	@RequestMapping(value="/getByIdMember/{idMember}", method=RequestMethod.GET)
+	SmfMember findById(@PathVariable int idMember){
+		return smfMemberRepository.findByIdMember(idMember);
+	}
 }
